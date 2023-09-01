@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .models import Task
 from .forms import NewTaskForm
@@ -17,3 +17,10 @@ def index(request):
         'form': form,
         'tasks': tasks,
     })
+
+
+def close(request, task_pk):
+    task = get_object_or_404(Task, pk=task_pk)
+    task.is_closed = True
+    task.save()
+    return redirect('core:index')

@@ -28,7 +28,7 @@
                                 <a href="#" class="btn btn-sm btn-primary">Open</a>
                             {% else %}
                                 <span class="px-3 py-1 bg-light rounded">Opened</span>
-                                <a class="btn btn-sm btn-outline-primary" href="#">Close</a>
+                                <a href="{% url 'core:close' task.id %}" class="btn btn-sm btn-outline-primary">Close</a>
                             {% endif %}
                             <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
                         </div>
