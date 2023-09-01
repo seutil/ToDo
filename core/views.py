@@ -31,3 +31,9 @@ def open(request, task_pk):
     task.is_closed = False
     task.save()
     return redirect('core:index')
+
+
+def delete(request, task_pk):
+    task = get_object_or_404(Task, pk=task_pk)
+    task.delete()
+    return redirect('core:index')
