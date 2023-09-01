@@ -7,4 +7,5 @@ app_name = 'core'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('<int:task_pk>/close/', views.close, name='close'),
 ]
