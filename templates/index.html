@@ -25,7 +25,7 @@
                         <div class="d-flex gap-1">
                             {% if task.is_closed %}
                                 <span class="px-3 py-1 bg-success text-white rounded">Done</span>
-                                <a href="#" class="btn btn-sm btn-primary">Open</a>
+                                <a href="{% url 'core:open' task.id %}" class="btn btn-sm btn-primary">Open</a>
                             {% else %}
                                 <span class="px-3 py-1 bg-light rounded">Opened</span>
                                 <a href="{% url 'core:close' task.id %}" class="btn btn-sm btn-outline-primary">Close</a>

@@ -24,3 +24,10 @@ def close(request, task_pk):
     task.is_closed = True
     task.save()
     return redirect('core:index')
+
+
+def open(request, task_pk):
+    task = get_object_or_404(Task, pk=task_pk)
+    task.is_closed = False
+    task.save()
+    return redirect('core:index')
